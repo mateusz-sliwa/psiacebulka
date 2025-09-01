@@ -1,236 +1,450 @@
 /* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-  }
-  
-  body {
-    background: #FAFAF7;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Sekcja HERO */
-  .hero {
-    height: 100vh;
-    background: url("images/background.jpg") center/cover no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-  }
-  
-  .hero .overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(141, 122, 60, 0.55); /* #8D7A3C z przezroczystością */
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 2;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Sekcje */
-  .section {
-    padding: 4rem 10%;
-    max-width: 1000px;
-    margin: auto;
-  }
-  
-  .section h2 {
-    color: #ED8452;
-    margin-bottom: 1.5rem;
-  }
-  
-  .qualifications ul, .offer ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .qualifications li, .offer li {
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Oferta */
-  .offer ul {
-    margin-bottom: 2rem;
-  }
-  
-  .btn {
-    display: inline-block;
-    background: #ED8452;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  
-  .btn:hover {
-    background: #8D7A3C;
-  }
-  
-  /* Stopka */
-  .footer {
-    background: #8D7A3C;
-    color: white;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .footer .socials {
-    margin-top: 1rem;
-  }
-  
-  .footer .socials a {
-    color: white;
-    margin: 0 0.5rem;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .footer .socials a:hover {
-    color: #ED8452;
-  }
-  
-  .section-box {
-    background: #8D7A3C;
-    color: white;
-    padding: 3rem 2rem;
-    margin: 3rem auto;
-    max-width: 1000px;     /* żeby sekcja nie była zbyt szeroka */
-    border-radius: 30px;   /* zaokrąglenie rogów */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* lekki cień */
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+/* Sekcja HERO */
+.hero {
+  height: 100vh;
+  background: url("images/background.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(141, 122, 60, 0.55); /* #8D7A3C z przezroczystością */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Sekcje */
+.section {
+  padding: 4rem 10%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h2 {
+  color: #ED8452;
+  margin-bottom: 1.5rem;
+}
+
+.qualifications ul, .offer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.qualifications li, .offer li {
+  margin-bottom: 0.5rem;
+}
+
+/* Oferta */
+.offer ul {
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #ED8452;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #8D7A3C;
+}
+
+/* Stopka */
+.footer {
+  background: #8D7A3C;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer .socials {
+  margin-top: 1rem;
+}
+
+.footer .socials a {
+  color: white;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer .socials a:hover {
+  color: #ED8452;
+}
+
 /* ---- Możliwość zmiany czcionki globalnie ---- */
 :root {
-    --main-font: "Helvetica Neue", Arial, sans-serif; /* <- tutaj możesz zmienić czcionkę */
-  }
-  
-  body {
-    font-family: var(--main-font);
-    background: #FAFAF7;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* ---- Sekcja O mnie w gridzie ---- */
-  /* Nagłówek O mnie poza prostokątem */
+  --main-font: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--main-font);
+  background: #d8d8c8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ---- Sekcja O mnie w gridzie ---- */
+/* Nagłówek O mnie poza prostokątem */
 .about-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #8D7A3C; /* kontrast na tle strony */
-    margin-bottom: 2rem;
-  }
-  
-  /* Prostokąt z opisem i kwalifikacjami */
-  .about-box {
-    background: rgba(255, 255, 255, 0.15); /* jasne, półprzezroczyste tło */
-    color: #8D7A3C;
-    padding: 3rem 2rem;
-    border-radius: 30px;
-    max-width: 1000px;
-    margin-bottom: 0.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  }
-  
-  /* Paragrafy */
-  .about-box p {
-    margin-bottom: 1.5rem; /* większe odstępy między akapitami */
-  }
-  
-  /* Kwalifikacje w prostokącie w środku */
-  .qualifications {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 1.5rem;
-    border-radius: 20px;
-    text-align: center;
-    margin-top: 2rem;
-  }
-  
-  .qualifications h3 {
-    margin-bottom: 1rem;
-  }
-  
-  .qualifications ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .qualifications li {
-    margin-bottom: 0.5rem;
-  }
-  
-  
-  /* Sekcja Oferta */
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ED8452; /* kontrast na tle strony */
+  margin-bottom: 2rem;
+}
+
+/* Prostokąt z opisem i kwalifikacjami */
+.about-box {
+  background: rgba(255, 255, 255, 0.15); /* jasne, półprzezroczyste tło */
+  color: #8D7A3C;
+  padding: 3rem 2rem;
+  border-radius: 30px;
+  max-width: 1000px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  text-align: center;
+  text-wrap: pretty;
+}
+
+/* Paragrafy */
+.about-box p {
+  margin-bottom: 1.5rem; /* większe odstępy między akapitami */
+}
+
+/* Kwalifikacje w prostokącie w środku */
+.qualifications {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.qualifications h3 {
+  margin-bottom: 1rem;
+}
+
+.qualifications ul {
+  list-style: none;
+  padding: 0;
+}
+
+.qualifications li {
+  margin-bottom: 0.5rem;
+}
+
+
+/* Sekcja Oferta */
 /* Nagłówek Oferta poza prostokątem */
 .offer-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #ED8452; /* ciemniejszy kontrast na tle zielonym */
-    margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ED8452; /* ciemniejszy kontrast na tle zielonym */
+  margin-bottom: 2rem;
+}
+
+/* Prostokąt z ofertą */
+.offer-box {
+  background: rgba(255, 255, 255, 0.15); /* jasny, półprzezroczysty */
+  color: #8D7A3C;
+  padding: 3rem 2rem;
+  border-radius: 30px;
+  max-width: 1000px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  text-align: center;
+  text-wrap: pretty;
+}
+
+.offer-box p {
+  margin-bottom: 1.5rem;
+}
+
+.offer-box ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.offer-box li::before {
+  content: "●"; 
+  margin-right: 0.5rem;
+}
+
+.offer-box li {
+  margin-bottom: 0.8rem;
+  display: inline-block;
+  text-align: left;
+}
+
+.offer-box .btn {
+  display: inline-block;
+  background: #ED8452; 
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.offer-box .btn:hover {
+  background: #8D7A3C;
+}
+
+.about-box, .offer-box, .qualifications {
+  max-width: 900px;          /* ogranicza rozciąganie tekstu */
+  margin: auto;               /* wyśrodkowanie w kafelku */
+}
+
+
+  
+/* Kontener poziomego scrolla */
+.horizontal-scroll {
+  display: flex;              
+  overflow-x: auto;           
+  scroll-snap-type: x mandatory; /* scroll zatrzymuje się przy kafelku */
+  scroll-behavior: smooth;    
+  height: 100vh;              /* wysokość równoważna widokowi */
+}
+
+/* Ukrycie paska przewijania */
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+.horizontal-scroll {
+  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.section-box {
+  flex: 0 0 100vw;            /* szerokość równa szerokości okna */
+  height: 100vh;              /* wysokość równa wysokości okna */
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.15);
+  color: #8D7A3C;
+  padding: 3rem 5%;           /* dostosowanie paddingu wewnątrz kafelka */
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  text-align: center;
+  scroll-snap-align: center; /* WAŻNE – centrowanie sekcji przy scrollowaniu */
+}
+
+
+/* Nagłówki i paragrafy */
+.about-title, .offer-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-box p, .offer-box p {
+  margin-bottom: 1.5rem;
+}
+
+/* Kwalifikacje */
+.qualifications {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.qualifications h3 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .section-box {
+    flex: 0 0 300px;
+    padding: 2rem 1rem;
   }
-  
-  /* Prostokąt z ofertą */
-  .offer-box {
-    background: rgba(255, 255, 255, 0.15); /* jasny, półprzezroczysty */
-    color: #8D7A3C;
-    padding: 3rem 2rem;
-    border-radius: 30px;
-    max-width: 1000px;
-    margin-bottom: 0.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    text-align: left;
+
+  .about-title, .offer-title {
+    font-size: 2rem;
   }
-  
-  .offer-box p {
-    margin-bottom: 1.5rem;
+}
+
+.scroll-indicator {
+  position: absolute;  /* zamiast fixed */
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--main-font);
+  z-index: 10;
+}
+
+
+.scroll-indicator .dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.scroll-indicator .dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.scroll-indicator .dot.active {
+  background: #ED8452;
+}
+
+.scroll-indicator .scroll-arrow {
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.scroll-indicator .scroll-arrow:hover {
+  color: #ED8452;
+}
+
+.qualifications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* trzy równe kolumny */
+  gap: 2rem;                            /* odstęp między kolumnami */
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.qualification-category {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.qualification-category h3 {
+  margin-bottom: 1rem;
+  color: #8D7A3C;
+}
+
+.qualification-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.qualification-category li {
+  margin-bottom: 0.5rem;
+}
+
+/* Akordeon */
+.accordion {
+  margin-bottom: 1rem;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: #8D7A3C;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.accordion-header:hover {
+  background: #ED8452;
+}
+
+/* początkowo akordeon niewidoczny */
+.accordion-content {
+  max-height: 0;           /* brak widocznej wysokości */
+  overflow: hidden;        /* treść ukryta */
+  transition: max-height 0.3s ease;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  margin-top: 0.5rem;
+  padding: 0 1.5rem;
+}
+
+/* po kliknięciu przycisku */
+.accordion-content.active {
+  max-height: 250px;       /* dopasuj wysokość do estetyki i scrolla */
+  overflow-y: auto;        /* włącz scroll jeśli treść dłuższa */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+
+/* Styl paska przewijania (opcjonalnie) */
+.accordion-content::-webkit-scrollbar {
+  width: 6px;
+}
+.accordion-content::-webkit-scrollbar-thumb {
+  background-color: #ED8452;
+  border-radius: 3px;
+}
+
+
+.accordion-content ul {
+  padding: 1rem 0;
+  list-style: none;
+}
+
+.accordion-content li {
+  margin-bottom: 0.5rem;
+  color: #ED8452;
+}
+
+.accordion-content li::before {
+  content: "●"; 
+  margin-right: 0.5rem;
+}
+
+
+@media (max-width: 1024px) {
+  .qualifications-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .offer-box ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .qualifications-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .offer-box li::before {
-    content: "✅"; 
-    margin-right: 0.5rem;
-  }
-  
-  .offer-box li {
-    margin-bottom: 0.8rem;
-    display: inline-block;
-    text-align: left;
-  }
-  
-  .offer-box .btn {
-    display: inline-block;
-    background: #ED8452; 
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .offer-box .btn:hover {
-    background: #8D7A3C;
-  }
-  
-    
-  
-    
+}
+
+
   

@@ -6,6 +6,7 @@
   <title>Szkolenie psów - Imię Nazwisko</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -18,60 +19,111 @@
     </div>
   </header>
 
-  <!-- O mnie -->
-  <section id="about" class="section">
-    <!-- Nagłówek O mnie poza prostokątem -->
-    <h2 class="about-title">O mnie</h2>
-  
-    <!-- Prostokąt z opisem i kwalifikacjami -->
-    <div class="about-box">
-      <p>Cześć! Jestem Gosia.</p>
-      <p>Jestem trenerką psów i instruktorką dogfitnessu. Pomagam opiekunom budować relację z psem opartą na zaufaniu, zrozumieniu i dobrej zabawie!</p>
-      <p>Wierzę, że szkolenie może być przyjemnością - zarówno dla psa, jak i człowieka.</p>
-      <p>Prowadzę zajęcia dla psów w każdym wieku i w każdej kondycji, jeśli tylko nie mają przeciwwskazań do ruchu.</p>
-      <p><strong>Zadbajmy razem o sprawność Twojego psa!</strong></p>
-  
-      <div class="qualifications">
-        <h3>Kwalifikacje</h3>
-        <ul>
-          <li>Kurs / certyfikat 1</li>
-          <li>Kurs / certyfikat 2</li>
-          <li>Kurs / certyfikat 3</li>
-        </ul>
+  <div class="scroll-indicator">
+  <span class="scroll-arrow left">&#8592;</span>
+  <div class="dots">
+    <span class="dot active" data-index="0"></span>
+    <span class="dot" data-index="1"></span>
+    <span class="dot" data-index="2"></span>
+  </div>
+  <span class="scroll-arrow right">&#8594;</span>
+</div>
+
+
+  <div class="horizontal-scroll">
+    <!-- O mnie -->
+    <section class="section-box">
+      <h2 class="about-title">O mnie</h2>
+      <div class="about-box">
+        <p>Cześć! Jestem Gosia.</p>
+        <p>Jestem trenerką psów i instruktorką dogfitnessu...</p>
+        <p>Wierzę, że szkolenie może być przyjemnością...</p>
+        <p>Prowadzę zajęcia dla psów w każdym wieku...</p>
+        <p><strong>Zadbajmy razem o sprawność Twojego psa!</strong></p>
       </div>
-    </div>
-  </section>
+    </section>
+    
+    <!-- Kwalifikacje -->
+    <section id="qualifications" class="section section-box">
+      <h2 class="about-title">Kwalifikacje</h2>
+    
+      <!-- Akordeon 1 -->
+      <div class="accordion">
+        <button class="accordion-header">Kursy</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Trener Psów, Wojtków Szkolenia (2024)</li>
+            <li>Instruktor Dogfitness, Polska Akademia Zoopsychologii i Animaloterapii (2025)</li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- Akordeon 2 -->
+      <div class="accordion">
+        <button class="accordion-header">Warsztaty stacjonarne</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Warsztaty Masażu GASA, ArtSfera Sylwia Bryniarska (2023)</li>
+            <li>Praca w rozproszeniach, i wszystko jasne Paula Gumińska (2024)</li>
+            <li>Klasy komunikacji z Pauliną Ziółkowską, Talking Dogs (2025)</li>
+            <li>Klasy komunikacji z Angelą Stockdale, Psia Wachta (2025)</li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- Akordeon 3 -->
+      <div class="accordion">
+        <button class="accordion-header">Kursy i webinary</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Emocje u psów, Wojtków Szkolenia (2023)</li>
+            <li>Pies reaktywny to pies agresywny? Czy można mu pomóc? Wojtków Szkolenia (2023)</li>
+            <li>To moje! Nie oddam! Jak pracować z problemem obrony zasobów? Wojtków Szkolenia (2023)</li>
+            <li>Ocena Psów Agresywnych, Wojtków Szkolenia (2023)</li>
+            <li>Agresja u psów - zrozum emocje, zmień reakcje, Wojtków Szkolenia (2023)</li>
+            <li>Analiza psiej komunikacji, Wojtków Szkolenia (2023)</li>
+            <li>Jak walczyć z psimi strachami i demonami? Wojtków Szkolenia (2023)</li>
+            <li>Czy opiekun to zasób? Webinar o psiej zazdrości, Pieski Niebieski Natalia Paduszyńska (2024)</li>
+            <li>Kiedy agresja staje się problemem, Piesek Manu Magdalena Michałek (2024)</li>
+            <li>Healing Sound Sensitive Dogs, Wojtków Szkolenia (2024)</li>
+            <li>Kontrola Zachowań Łowieckich, Wojtków Szkolenia (2025)</li>
+            <li>Jak wykorzystać koncepcję pracy w stożku zapachowym do kontroli zachowań łowieckich? Wojtków Szkolenia (2025)</li>
+            <li>Amber Batson Discusses Neutering Dogs: Balancing Health and Behaviour, Wojtków Szkolenia (2025)</li>
+            <li>Balans w pracy z psem lękliwym. Empatia i granice. Jak szukać złotego środka? Wojtków Szkolenia (2025)</li>
+            <li>Jak praca nosem wpływa na emocje psa? Wojtków Szkolenia (2025)</li>
+            <li>Zasobnik trenera psów, Wojtków Szkolenia (2025</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    
   
+    <!-- Oferta -->
+    <section class="section-box">
+      <h2 class="offer-title">Oferta</h2>
+      <div class="offer-box">
+        <p>Oferuję różnorodne zajęcia dostosowane do wieku, kondycji i charakteru psa...</p>
+        <ul>
+          <li>Dogfitness</li>
+          <li>Podstawowe posłuszeństwo</li>
+          <li>Sztuczki</li>
+          <li>Spacery socjalizacyjne</li>
+        </ul>
+        <a href="https://cal.com/psiacebulka" target="_blank" class="btn">Zapisz się</a>
+      </div>
+    </section>
+  </div>
   
-  <!-- Oferta -->
-  <section id="offer" class="section">
-    <!-- Nagłówek Oferta nad prostokątem -->
-    <h2 class="offer-title">Oferta</h2>
-  
-    <!-- Prostokąt z listą oferty -->
-    <div class="offer-box">
-      <p>Oferuję różnorodne zajęcia dostosowane do wieku, kondycji i charakteru psa. Każdy trening odbywa się w atmosferze zaufania i dobrej zabawy.</p>
-  
-      <ul>
-        <li>Zajęcia indywidualne</li>
-        <li>Szkolenie grupowe</li>
-        <li>Konsultacje behawioralne</li>
-        <li>Praca z psem lękliwym</li>
-        <li>Trening podstawowych komend</li>
-      </ul>
-  
-      <a href="https://twoj-link-do-kalendarza" target="_blank" class="btn">Zapisz się</a>
-    </div>
-  </section>
   
   
   <!-- Footer -->
   <footer class="footer">
     <p>© 2025 Gosia Śliwa - Szkolenie psów</p>
     <div class="socials">
-        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://facebook.com/" target="https://www.facebook.com/people/psiacebulka/61578335457909/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/" target="https://www.instagram.com/psiacebulka/"><i class="fab fa-instagram"></i></a>
+        <a href="https://tiktok.com/" target="https://www.tiktok.com/@psiacebulka?_r=1&_d=secCgYIASAHKAESPgo8CGlh1kLrr1KekJUSd5iT4hdW6n7B1JTYGzWBIHU3yfWgBjvkGEolpAhceFbq4POALl0BcTOh%2BOqiZJUbGgA%3D&_svg=2&checksum=bcaf642a2d71e144a3540c44350074c158733703ea5e56b987f4b55eb6e4922b&item_author_type=1&sec_uid=MS4wLjABAAAAa3EVkK_FtoZo5-PMpeq_RmxJFWO1tyllG5k9Mx6vdzlTR9tAiE3kD1DTSJ_9jA0Z&sec_user_id=MS4wLjABAAAAa3EVkK_FtoZo5-PMpeq_RmxJFWO1tyllG5k9Mx6vdzlTR9tAiE3kD1DTSJ_9jA0Z&share_app_id=1233&share_author_id=7266820708326753313&share_link_id=CFEF0AC0-397E-4653-A405-BAF944925EFE&share_scene=1&sharer_language=pl&social_share_type=4&source=h5_m&timestamp=1756723160&tt_from=copy&u_code=e9dgh0ekb50i9b&ug_btm=b8727%2Cb0&user_id=7266820708326753313&utm_campaign=client_share&utm_medium=ios&utm_source=copy"><i class="fab fa-tiktok"></i></a>
     </div>
   </footer>
 
