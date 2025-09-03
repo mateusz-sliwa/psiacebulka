@@ -204,14 +204,28 @@ body {
 }
 
 .offer-box .btn {
+  position: relative;   /* konieczne dla z-index */
+  z-index: 2;           /* większe niż tło */
   display: inline-block;
-  background: #ED8452; 
+  background: #ED8452;
   color: white;
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
+}
+
+.offer-box::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url("images/paw_pattern.jpg") no-repeat center/cover;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;  /* niżej niż przycisk */
+  border-radius: inherit;
 }
 
 .offer-box .btn:hover {
@@ -247,14 +261,35 @@ body {
   flex: 0 0 100vw;            /* Width equal to window width */
   height: 100vh;              /* Height equal to window height*/
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.15);
   color: #8D7A3C;
   padding: 3rem 5%;           /* dostosowanie paddingu wewnątrz kafelka */
-  border-radius: 500px;
+  border-radius: 75px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   text-align: center;
   scroll-snap-align: center; /* WAŻNE – centrowanie sekcji przy scrollowaniu */
+}
+
+.about-box::before,
+.offer-box::before,
+.accordion-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("images/paw_pattern.jpg") no-repeat center/cover; 
+  border-radius: 75px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-box,
+.offer-box,
+.accordion-content {
+  position: relative; /* pseudo-element musi być względem sekcji */
 }
 
 
@@ -425,7 +460,7 @@ body {
 
 .accordion-content li {
   margin-bottom: 0.5rem;
-  color: #ED8452;
+  color: #8D7A3C;
 }
 
 .accordion-content li::before {
@@ -457,6 +492,7 @@ body {
   }
 
   .section-box {
+    padding: 2rem 1rem;
     width: 100%;
     min-width: unset;
     flex: unset;
@@ -480,5 +516,3 @@ body {
     display: none;
   }
 }
-
-
