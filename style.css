@@ -7,7 +7,7 @@
 }
 
 
-/* Sekcja HERO */
+/* Section HERO */
 .hero {
   height: 100vh;
   background: url("images/background.jpg") center/cover no-repeat;
@@ -23,7 +23,7 @@
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(141, 122, 60, 0.55); /* #8D7A3C z przezroczystością */
+  background: rgba(141, 122, 60, 0.55); /* #8D7A3C transparent */
 }
 
 .hero-content {
@@ -36,7 +36,7 @@
   margin-bottom: 1rem;
 }
 
-/* Sekcje */
+/* Sections */
 .section {
   padding: 4rem 10%;
   max-width: 1000px;
@@ -57,7 +57,7 @@
   margin-bottom: 0.5rem;
 }
 
-/* Oferta */
+/* Offer */
 .offer ul {
   margin-bottom: 2rem;
 }
@@ -76,7 +76,7 @@
   background: #8D7A3C;
 }
 
-/* Stopka */
+/* Footer */
 .footer {
   background: #8D7A3C;
   color: white;
@@ -99,7 +99,6 @@
   color: #ED8452;
 }
 
-/* ---- Możliwość zmiany czcionki globalnie ---- */
 :root {
   --main-font: 'Poppins', sans-serif;
 }
@@ -111,18 +110,18 @@ body {
   line-height: 1.6;
 }
 
-/* ---- Sekcja O mnie w gridzie ---- */
-/* Nagłówek O mnie poza prostokątem */
+/* ---- Section About me in grid ---- */
+/* Header About me outside of tile */
 .about-title {
   text-align: center;
   font-size: 2.5rem;
-  color: #ED8452; /* kontrast na tle strony */
+  color: #ED8452;
   margin-bottom: 2rem;
 }
 
-/* Prostokąt z opisem i kwalifikacjami */
+/* About tile */
 .about-box {
-  background: rgba(255, 255, 255, 0.15); /* jasne, półprzezroczyste tło */
+  background: rgba(255, 255, 255, 0.15); /* light, transparent background*/
   color: #8D7A3C;
   padding: 3rem 2rem;
   border-radius: 30px;
@@ -133,12 +132,12 @@ body {
   text-wrap: pretty;
 }
 
-/* Paragrafy */
+/* Paragraphs */
 .about-box p {
-  margin-bottom: 1.5rem; /* większe odstępy między akapitami */
+  margin-bottom: 1.5rem; /* Bigger spacing between paragraphs */
 }
 
-/* Kwalifikacje w prostokącie w środku */
+/* Qualifications centered to tile */
 .qualifications {
   background: rgba(255, 255, 255, 0.15);
   padding: 1.5rem;
@@ -161,18 +160,18 @@ body {
 }
 
 
-/* Sekcja Oferta */
-/* Nagłówek Oferta poza prostokątem */
+/* Offer section */
+/* Header outside of tile */
 .offer-title {
   text-align: center;
   font-size: 2.5rem;
-  color: #ED8452; /* ciemniejszy kontrast na tle zielonym */
+  color: #ED8452;
   margin-bottom: 2rem;
 }
 
-/* Prostokąt z ofertą */
+/* Tile with offer */
 .offer-box {
-  background: rgba(255, 255, 255, 0.15); /* jasny, półprzezroczysty */
+  background: rgba(255, 255, 255, 0.15); /* light, transparent */
   color: #8D7A3C;
   padding: 3rem 2rem;
   border-radius: 30px;
@@ -220,22 +219,22 @@ body {
 }
 
 .about-box, .offer-box, .qualifications {
-  max-width: 900px;          /* ogranicza rozciąganie tekstu */
-  margin: auto;               /* wyśrodkowanie w kafelku */
+  max-width: 900px;          /* Prevents text stretching */
+  margin: auto;               /* Center at tile */
 }
 
 
   
-/* Kontener poziomego scrolla */
+/* Container of horizontal scroll */
 .horizontal-scroll {
   display: flex;              
   overflow-x: auto;           
-  scroll-snap-type: x mandatory; /* scroll zatrzymuje się przy kafelku */
+  scroll-snap-type: x mandatory; /* Stop at tile */
   scroll-behavior: smooth;    
-  height: 100vh;              /* wysokość równoważna widokowi */
+  height: 100vh;              /* Height equal to view */
 }
 
-/* Ukrycie paska przewijania */
+/* Scrollbar hiding */
 .horizontal-scroll::-webkit-scrollbar {
   display: none;
 }
@@ -245,8 +244,8 @@ body {
 }
 
 .section-box {
-  flex: 0 0 100vw;            /* szerokość równa szerokości okna */
-  height: 100vh;              /* wysokość równa wysokości okna */
+  flex: 0 0 100vw;            /* Width equal to window width */
+  height: 100vh;              /* Height equal to window height*/
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.15);
   color: #8D7A3C;
@@ -258,7 +257,7 @@ body {
 }
 
 
-/* Nagłówki i paragrafy */
+/* Headers and paragraphs */
 .about-title, .offer-title {
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -269,7 +268,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Kwalifikacje */
+/* Qualifications */
 .qualifications {
   background: rgba(255, 255, 255, 0.15);
   padding: 1.5rem;
@@ -293,7 +292,7 @@ body {
 }
 
 .scroll-indicator {
-  position: absolute;  /* zamiast fixed */
+  position: absolute;
   bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
@@ -337,8 +336,8 @@ body {
 
 .qualifications-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* trzy równe kolumny */
-  gap: 2rem;                            /* odstęp między kolumnami */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 2rem;                            /* Spacing between columns */
   margin-top: 2rem;
   text-align: center;
 }
@@ -364,7 +363,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Akordeon */
+/* Accordion */
 .accordion {
   margin-bottom: 1rem;
 }
@@ -387,10 +386,10 @@ body {
   background: #ED8452;
 }
 
-/* początkowo akordeon niewidoczny */
+/* Accordion not visible at start */
 .accordion-content {
-  max-height: 0;           /* brak widocznej wysokości */
-  overflow: hidden;        /* treść ukryta */
+  max-height: 0;
+  overflow: hidden;
   transition: max-height 0.3s ease;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 15px;
@@ -398,17 +397,17 @@ body {
   padding: 0 1.5rem;
 }
 
-/* po kliknięciu przycisku */
+/* Button press */
 .accordion-content.active {
-  max-height: 250px;       /* dopasuj wysokość do estetyki i scrolla */
-  overflow-y: auto;        /* włącz scroll jeśli treść dłuższa */
+  max-height: 250px;
+  overflow-y: auto;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
 
 
-/* Styl paska przewijania (opcjonalnie) */
+/* Style of scroll line */
 .accordion-content::-webkit-scrollbar {
   width: 6px;
 }
@@ -446,5 +445,39 @@ body {
   }
 }
 
+/* Mobile navigation */
+@media (max-width: 768px) {
+  .horizontal-scroll {
+    flex-direction: column;   /* Sections above each other*/
+    overflow-x: hidden;       /* Disable horizontal scroll */
+    overflow-y: auto;         /* Enable vertical scroll */
+    gap: 2rem;                
+    padding: 0;               
+  }
 
-  
+  .section-box {
+    width: 100%;
+    min-width: unset;
+    flex: unset;
+    margin: 0 auto;
+    max-width: 1000px;
+    height: auto; /* Section matches the tile size */
+  }
+}
+
+
+.section-box p,
+.section-box li {
+  line-height: 1.8;  /* Bigger spacing */
+  word-wrap: break-word; /* Break down long words */
+  white-space: normal;   /* Prevents text from "sliding" */
+}
+
+/* Turn off dots navigation for mobile */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+

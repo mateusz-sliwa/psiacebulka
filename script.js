@@ -1,4 +1,4 @@
-// Płynne przewijanie do sekcji
+// Smooth scroll to sections
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
       e.preventDefault();
@@ -21,12 +21,12 @@ accHeaders.forEach(header => {
   header.addEventListener('click', () => {
     const content = header.nextElementSibling;
 
-    // zamknij wszystkie inne
+    // Close other
     document.querySelectorAll('.accordion-content').forEach(c => {
       if(c !== content) c.classList.remove('active');
     });
 
-    // otwórz/zamknij aktualny
+    // Open/close current
     content.classList.toggle('active');
   });
 });
@@ -48,7 +48,7 @@ function updateActiveDot() {
 
 scrollContainer.addEventListener('scroll', updateActiveDot);
 
-// Kliknięcie na kropki
+// Dots click
 dots.forEach(dot => {
   dot.addEventListener('click', () => {
     const index = parseInt(dot.dataset.index);
@@ -59,7 +59,7 @@ dots.forEach(dot => {
   });
 });
 
-// Strzałki
+// Arrows
 leftArrow.addEventListener('click', () => {
   const activeIndex = [...dots].findIndex(dot => dot.classList.contains('active'));
   if (activeIndex > 0) {
@@ -80,6 +80,6 @@ rightArrow.addEventListener('click', () => {
   }
 });
 
-// Inicjalizacja
+// Initialize
 updateActiveDot();
 
