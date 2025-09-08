@@ -459,8 +459,15 @@ body {
   content: "●"; 
   margin-right: 0.5rem;
 }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
 /* CTA */
 .cta-fixed {
+  animation: pulse 3s infinite;
   position: fixed;
   bottom: 20px;         
   right: 20px;
