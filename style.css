@@ -219,6 +219,239 @@ body {
 .offer-box .btn:hover {
   background: #8D7A3C;
 }
+/* Offer grid with icons */
+.offer-grid {
+  position: relative;
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.offer-grid::before,
+.offer-grid::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.offer-grid::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(232,233,223,1), rgba(232,233,223,0));
+}
+
+.offer-grid::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(232,233,223,1), rgba(232,233,223,0));
+}
+
+.offer-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.offer-grid::-webkit-scrollbar-thumb {
+  background: #ED8452;
+  border-radius: 4px;
+}
+
+.top-row, .bottom-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;      /* odstępy między kafelkami */
+  justify-content: center; /* wycentrowane */
+}
+
+.bottom-row {
+  display: flex;
+  gap: 2rem;          /* Odstęp między kafelkami taki jak w górnym wierszu */
+  justify-content: center; /* Wycentrowane kafelki */
+  flex-wrap: wrap;
+}
+
+.bottom-row .offer-item {
+  width: 220px;  /* nieco szersze */
+  max-width: 100%;
+}
+
+
+/* Kafelki */
+.offer-item {
+  flex: 0 0 220px;        /* sztywna szerokość każdego kafelka, nie zwija się */
+  min-width: 220px;
+  max-width: 250px;       /* opcjonalnie */
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.offer-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.offer-item i {
+  font-size: 2.5rem;
+  color: #ED8452;
+  margin-bottom: 1rem;
+}
+
+.offer-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #8D7A3C;
+}
+
+.offer-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Układ 2+3 */
+.offer-item:nth-child(1) {
+  grid-column: 2; /* pierwszy w górnym wierszu, wyśrodkowany */
+  grid-row: 1;
+}
+
+.offer-item:nth-child(2) {
+  grid-column: 3; /* drugi w górnym wierszu, zaraz obok */
+  grid-row: 1;
+}
+
+.offer-item:nth-child(3) {
+  grid-column: 1; /* dolny wiersz: 1,2,3 */
+  grid-row: 2;
+}
+
+.offer-item:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.offer-item:nth-child(5) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Pricing */
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto 0 auto; /* auto marginesy wyśrodkowują listę */
+  text-align: center;        /* wyrównanie tekstu do środka */
+  max-width: 400px;          /* opcjonalnie ograniczenie szerokości */
+}
+
+.price-list li {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  color: #8D7A3C;
+  display: flex;
+  justify-content: center;    /* wyśrodkowanie ikon i tekstu razem */
+  align-items: center;
+  gap: 0.5rem;               /* odstęp między ikoną a tekstem */
+}
+
+.price-list i {
+  color: #ED8452;
+}
+
+.offer-scroll-wrapper {
+  position: relative;
+}
+
+.offer-scroll-indicator {
+  display: none; /* domyślnie ukryte */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.offer-scroll-indicator .dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.offer-scroll-indicator .dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(141,122,60,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.offer-scroll-indicator .dot.active {
+  background: #ED8452;
+}
+
+.offer-scroll-indicator .scroll-arrow {
+  font-size: 1.2rem;
+  color: #8D7A3C;
+  cursor: pointer;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .offer-scroll-indicator {
+    display: flex;  /* widoczne tylko na mobile */
+  }
+}
+
+
+.scroll-indicator .scroll-arrow {
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.scroll-arrow:hover {
+  background: #ED8452;
+  color: white;
+}
+
+.scroll-arrow.left {
+  left: 0;
+}
+
+.scroll-arrow.right {
+  right: 0;
+}
+
+
+@media (max-width: 768px) {
+  .top-row .offer-item,
+  .bottom-row .offer-item {
+    flex: 1 1 90%;
+    max-width: 90%;
+  }
+}
+
+
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .offer-grid {
+    gap: 1rem;
+  }
+
+  .offer-item {
+    flex: 0 0 180px; /* mniejsze kafelki na mobilkach */
+  }
+}
+
+
+
 
 .about-box, .offer-box, .qualifications {
   max-width: 900px;          /* Prevents text stretching */
@@ -275,6 +508,14 @@ body {
 .section-box > * {
   position: relative;
   z-index: 1;
+}
+
+#offer.section-box {
+  width: 100%;          /* zajmuje całą szerokość ekranu */
+  min-width: 100vw;     /* minimalnie pełny ekran */
+  padding: 3rem 3%;     /* mniejszy padding po bokach, żeby sekcja była szersza */
+  padding-bottom: 12rem; /* pozostaw miejsce na stopkę */
+  box-sizing: border-box;
 }
 
 .about-box,

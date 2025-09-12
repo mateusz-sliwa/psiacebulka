@@ -16,6 +16,77 @@ const sections = document.querySelectorAll('.section-box');
 
 const accHeaders = document.querySelectorAll('.accordion-header');
 
+const offerGrid = document.querySelector('.offer-grid');
+const offerDots = document.querySelectorAll('.offer-scroll-indicator .dot');
+const offerLeftArrow = document.querySelector('.offer-scroll-indicator .scroll-arrow.left');
+const offerRightArrow = document.querySelector('.offer-scroll-indicator .scroll-arrow.right');
+const offerItems = document.querySelectorAll('.offer-item');
+
+// Update active dot przy scrollu
+function updateOfferDots() {
+  const scrollLeft = offerGrid.scrollLeft;
+  const containerWidth = offerGrid.clientWidth;
+  offerItems.forEach((item, index) => {
+    const itemLeft = item.offsetLeft;
+    const itemRight = itemLeft + item.offsetWidth;
+    if (scrollLeft + containerWidth / 2 >= itemLeft && scrollLeft + containerWidth / 2 < itemRight) {
+      offerDots.forEach(dot => dot.classList.remove('active'));
+      offerDots[index].classList.add('active');
+    }
+  });
+}
+
+offerGrid.addEventListener('scroll', updateOfferDots);
+
+// Kliknięcie w dot
+offerDots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    const index = parseInt(dot.dataset.index);
+    offerGrid.scrollTo({
+      left: offerItems[index].offsetLeft,
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Strzałki
+offerLeftArrow.addEventListener('click', () => {
+  const activeIndex = [...offerDots].findIndex(dot => dot.classList.contains('active'));
+  if (activeIndex > 0) {
+    offerGrid.scrollTo({
+      left: offerItems[activeIndex - 1].offsetLeft,
+      behavior: 'smooth'
+    });
+  }
+});
+
+offerRightArrow.addEventListener('click', () => {
+  const activeIndex = [...offerDots].findIndex(dot => dot.classList.contains('active'));
+  if (activeIndex < offerItems.length - 1) {
+    offerGrid.scrollTo({
+      left: offerItems[activeIndex + 1].offsetLeft,
+      behavior: 'smooth'
+    });
+  }
+});
+
+// Initialize
+updateOfferDots();
+
+const arrows = document.querySelectorAll('.scroll-arrow');
+
+arrows.forEach(arrow => {
+  arrow.addEventListener('click', () => {
+    const scrollAmount = 250; // szerokość jednego kafelka + gap
+    if (arrow.classList.contains('left')) {
+      offerGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+      offerGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  });
+});
+
+
 // Accordeon
 accHeaders.forEach(header => {
   header.addEventListener('click', () => {
